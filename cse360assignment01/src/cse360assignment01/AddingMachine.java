@@ -10,12 +10,14 @@ package cse360assignment01;
 
 public class AddingMachine {
 	private int total;
+	private String history;
 	  
 	/**
 	 * Constructor for AddingMachine class
 	 */
 	  public AddingMachine () {
 	    total = 0;  // not needed - included for clarity
+	    history = "0";
 	  }
 	  
 	  /**
@@ -23,7 +25,7 @@ public class AddingMachine {
 	   * @return total
 	   */
 	  public int getTotal () {
-	    return 0;
+	    return total;
 	  }
 	  
 	  /**
@@ -31,6 +33,8 @@ public class AddingMachine {
 	   * @param value
 	   */
 	  public void add (int value) {
+		  total += value;
+		  history = history + " + " + value;
 	  }
 
 	  /**
@@ -38,6 +42,8 @@ public class AddingMachine {
 	   * @param value
 	   */
 	  public void subtract (int value) {
+		  total -= value;
+		  history = history + " - " + value;
 	  }
 
 	  /**
@@ -45,12 +51,14 @@ public class AddingMachine {
 	   * @return history
 	   */
 	  public String toString () {
-	    return "";
+	    return history;
 	  }
 
 	  /**
 	   * clear AddingMachine
 	   */
 	  public void clear() {
+		  total = 0;
+		  history = "0";
 	  }
 }
